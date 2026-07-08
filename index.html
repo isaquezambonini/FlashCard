@@ -3,14 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlashCard</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <title>Cartão Pokémon</title>
 
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+        }
+
+        header{
+            background:#e53935;
+            color:#fff;
+            padding:20px;
+            text-align:center;
+        }
+
+        nav{
+            margin-top:10px;
+        }
+
+        nav a{
+            color:#fff;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        h2{
+            text-align:center;
+            margin:30px 0;
+        }
+
+        section{
+            display:flex;
+            justify-content:center;
+            gap:40px;
+            flex-wrap:wrap;
+            padding-bottom:40px;
+        }
+
+        .cartao{
+            width:250px;
+            height:360px;
+            perspective:1000px;
+        }
+
+        .cartao-interno{
+            width:100%;
+            height:100%;
+            position:relative;
+            transition:transform .8s;
+            transform-style:preserve-3d;
+        }
+
+        .cartao:hover .cartao-interno{
+            transform:rotateY(180deg);
+        }
+
+        .cartao-frente,
+        .cartao-verso{
+            position:absolute;
+            width:100%;
+            height:100%;
+            backface-visibility:hidden;
+            border-radius:15px;
+            overflow:hidden;
+            background:#fff;
+            box-shadow:0 5px 15px rgba(0,0,0,.3);
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            padding:15px;
+            text-align:center;
+        }
+
+        .cartao-verso{
+            transform:rotateY(180deg);
+        }
+
+        .cartao-imagem{
+            width:200px;
+            border-radius:10px;
+            margin-bottom:15px;
+        }
+
+        footer{
+            background:#222;
+            color:#fff;
+            text-align:center;
+            padding:15px;
+            margin-top:30px;
+        }
+    </style>
+</head>
 <body>
 
 <header>
-    <h1>Confere aí</h1>
+    <h1>Meu Projeto Pokémon</h1>
+
     <nav>
         <a href="#">Início</a>
     </nav>
@@ -22,39 +118,67 @@
 
 <section>
 
-<article class="cartao">
-    <div class="cartao-interno">
+    <!-- Primeiro cartão -->
+    <article class="cartao">
+        <div class="cartao-interno">
 
-        <!-- Frente -->
-        <div class="cartao-frente">
-            <img
-                src="https://www.mypokecard.com/es/Galeria/my/galery/eEdMVX8Mgjsy.jpg"
-                alt="Carta Pokémon personalizada"
-                class="cartao-imagem">
+            <div class="cartao-frente">
+                <img
+                    src="https://www.mypokecard.com/es/Galeria/my/galery/eEdMVX8Mgjsy.jpg"
+                    alt="Carta Pokémon"
+                    class="cartao-imagem">
 
-            <p>Você conhece esse Pokémon?</p>
+                <p>Você conhece esse Pokémon?</p>
+            </div>
+
+            <div class="cartao-verso">
+                <img
+                    src="https://www.mypokecard.com/es/Galeria/my/galery/eEdMVX8Mgjsy.jpg"
+                    alt="Carta Pokémon"
+                    class="cartao-imagem">
+
+                <p>
+                    Essa é uma carta personalizada criada no MyPokeCard.
+                    Ela representa um Pokémon fictício feito para diversão.
+                </p>
+            </div>
+
         </div>
+    </article>
 
-        <!-- Verso -->
-        <div class="cartao-verso">
-            <img
-                src="https://www.mypokecard.com/es/Galeria/my/galery/eEdMVX8Mgjsy.jpg"
-                alt="Carta Pokémon personalizada"
-                class="cartao-imagem">
+    <!-- Segundo cartão -->
+    <article class="cartao">
+        <div class="cartao-interno">
 
-            <p>Essa é uma carta personalizada criada no MyPokeCard. Ela representa um Pokémon fictício feito pelo usuário para fins de diversão. :contentReference[oaicite:0]{index=0}
-</p>
+            <div class="cartao-frente">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLKEfQFVW5xYv3rwlXe9EiLuX5kcFA4RYoKfAakx0BCw&s=10"
+                    alt="Pokémon"
+                    class="cartao-imagem">
+
+                <p>Conhece este também?</p>
+            </div>
+
+            <div class="cartao-verso">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLKEfQFVW5xYv3rwlXe9EiLuX5kcFA4RYoKfAakx0BCw&s=10"
+                    alt="Pokémon"
+                    class="cartao-imagem">
+
+                <p>
+                    Este é o segundo cartão do projeto, usando a imagem que você enviou.
+                </p>
+            </div>
+
         </div>
-
-    </div>
-</article>
+    </article>
 
 </section>
 
 </main>
 
 <footer>
-    <p>Projeto feito por Isaque z</p>
+    <p>Projeto feito por Isaque Z</p>
 </footer>
 
 </body>
